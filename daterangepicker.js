@@ -531,6 +531,11 @@
             this.updateMonthsInView();
         },
 
+        setDate: function(date) {
+            this.setStartDate(date);
+            this.setEndDate(date);
+        },
+
         isInvalidDate: function() {
             return false;
         },
