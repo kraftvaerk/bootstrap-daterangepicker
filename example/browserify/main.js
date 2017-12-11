@@ -49,6 +49,12 @@ $(document).ready(function() {
     if ($('#timePicker24Hour').is(':checked'))
       options.timePicker24Hour = true;
 
+    if ($('#timePicker24MinHour').val().length)
+      options.timePicker24MinHour = parseInt($('#timePicker24MinHour').val(), 10);
+
+    if ($('#timePicker24MaxHour').val().length)
+      options.timePicker24MaxHour = parseInt($('#timePicker24MaxHour').val(), 10);
+
     if ($('#timePickerIncrement').val().length && $('#timePickerIncrement').val() != 1)
       options.timePickerIncrement = parseInt($('#timePickerIncrement').val(), 10);
 

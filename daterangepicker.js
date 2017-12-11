@@ -46,6 +46,8 @@
         this.showCustomRangeLabel = true;
         this.timePicker = false;
         this.timePicker24Hour = false;
+        this.timePicker24MinHour = false;
+        this.timePicker24MaxHour = false;
         this.timePickerIncrement = 1;
         this.timePickerSeconds = false;
         this.linkedCalendars = true;
@@ -255,6 +257,12 @@
         if (typeof options.timePicker24Hour === 'boolean')
             this.timePicker24Hour = options.timePicker24Hour;
 
+        if (typeof options.timePicker24MinHour === 'number')
+            this.timePicker24MinHour = options.timePicker24MinHour;
+
+        if (typeof options.timePicker24MaxHour === 'number')
+            this.timePicker24MaxHour = options.timePicker24MaxHour;
+
         if (typeof options.autoApply === 'boolean')
             this.autoApply = options.autoApply;
 
@@ -332,7 +340,7 @@
 
                 // If the end of the range is before the minimum or the start of the range is
                 // after the maximum, don't display this range option at all.
-                if ((this.minDate && end.isBefore(this.minDate, this.timepicker ? 'minute' : 'day')) 
+                if ((this.minDate && end.isBefore(this.minDate, this.timepicker ? 'minute' : 'day'))
                   || (maxDate && start.isAfter(maxDate, this.timepicker ? 'minute' : 'day')))
                     continue;
 
@@ -909,8 +917,8 @@
 
             html = '<select class="hourselect">';
 
-            var start = this.timePicker24Hour ? 0 : 1;
-            var end = this.timePicker24Hour ? 23 : 12;
+            var start = this.timePicker24Hour ? this.timePicker24MinHour || 0 : 1;
+            var end = this.timePicker24Hour ? this.timePicker24MaxHour || 23 : 12;
 
             for (var i = start; i <= end; i++) {
                 var i_in_24 = i;
@@ -1530,7 +1538,7 @@
             this.container.find('input[name="daterangepicker_start"], input[name="daterangepicker_end"]').removeClass('active');
             $(e.target).addClass('active');
 
-            // Set the state such that if the user goes back to using a mouse, 
+            // Set the state such that if the user goes back to using a mouse,
             // the calendars are aware we're selecting the end of the range, not
             // the start. This allows someone to edit the end of a date range without
             // re-selecting the beginning, by clicking on the end date input then
