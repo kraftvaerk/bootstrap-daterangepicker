@@ -538,6 +538,18 @@
             this.setEndDate(date);
         },
 
+        setMinDate: function(date) {
+            this.minDate = date;
+
+            if (this.singleDatePicker) {
+                this.setDate(date);
+            } else {
+                this.setStartDate(date);
+            }
+
+            this.updateCalendars();
+        },
+
         isInvalidDate: function() {
             return false;
         },
@@ -1586,7 +1598,7 @@
             // Other browsers and versions of IE are untested and the behaviour is unknown.
             if (e.keyCode === 13) {
                 // Prevent the calendar from being updated twice on Chrome/Firefox/Edge
-                e.preventDefault(); 
+                e.preventDefault();
                 this.formInputsChanged(e);
             }
         },
