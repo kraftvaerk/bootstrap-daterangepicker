@@ -541,10 +541,12 @@
         setMinDate: function(date) {
             this.minDate = date;
 
-            if (this.singleDatePicker) {
-                this.setDate(date);
-            } else {
-                this.setStartDate(date);
+            if (this.startDate.isBefore(date)) {
+                if (this.singleDatePicker) {
+                    this.setDate(date);
+                } else {
+                    this.setStartDate(date);
+                }
             }
 
             this.updateCalendars();
