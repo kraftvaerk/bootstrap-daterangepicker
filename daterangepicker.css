@@ -149,9 +149,11 @@
     .daterangepicker .input-mini.active {
       border: 1px solid #08c;
       border-radius: 4px; }
-  .daterangepicker .daterangepicker_input {
+  .daterangepicker .daterangepicker_input,
+  .daterangepicker .calendar-time {
     position: relative; }
-    .daterangepicker .daterangepicker_input i {
+    .daterangepicker .daterangepicker_input i,
+    .daterangepicker .calendar-time i {
       position: absolute;
       left: 8px;
       top: 8px; }
@@ -258,6 +260,7 @@
       .daterangepicker.rtl .ranges, .daterangepicker.rtl .calendar {
         text-align: right;
         float: right; } }
+
 @media (min-width: 730px) {
   .daterangepicker .ranges {
     width: auto; }
@@ -267,3 +270,4 @@
     float: right; }
   .daterangepicker .calendar.left {
     clear: none !important; } }
+

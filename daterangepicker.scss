@@ -392,7 +392,8 @@ $daterangepicker-ranges-active-border-radius: $daterangepicker-border-radius !de
     }
   }
 
-  .daterangepicker_input {
+  .daterangepicker_input,
+  .calendar-time {
     position: relative;
 
     i {
