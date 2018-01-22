@@ -163,6 +163,9 @@
   .daterangepicker.rtl .daterangepicker_input i {
     left: auto;
     right: 8px; }
+  .daterangepicker .calendar-title {
+    padding-top: 5px;
+    margin-bottom: 5px; }
   .daterangepicker .calendar-time {
     text-align: center;
     margin: 5px auto;

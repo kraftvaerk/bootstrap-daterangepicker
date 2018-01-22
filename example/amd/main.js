@@ -39,6 +39,9 @@ $(document).ready(function() {
     if ($('#singleDatePicker').is(':checked'))
       options.singleDatePicker = true;
 
+    if ($('#showCalendarTitles').is(':checked'))
+      options.showCalendarTitles = true;
+
     if ($('#showDropdowns').is(':checked'))
       options.showDropdowns = true;
 
@@ -87,6 +90,8 @@ $(document).ready(function() {
       options.locale = {
         format: 'MM/DD/YYYY HH:mm',
         separator: ' - ',
+        leftCalendarTitle: 'From',
+        rightCalendarTitle: 'To',
         applyLabel: 'Apply',
         cancelLabel: 'Cancel',
         fromLabel: 'From',

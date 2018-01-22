@@ -40,6 +40,7 @@
         this.dateLimit = false;
         this.autoApply = false;
         this.singleDatePicker = false;
+        this.showCalendarTitles = false;
         this.showDropdowns = false;
         this.showWeekNumbers = false;
         this.showISOWeekNumbers = false;
@@ -71,6 +72,8 @@
             direction: 'ltr',
             format: moment.localeData().longDateFormat('L'),
             separator: ' - ',
+            leftCalendarTitle: 'From',
+            rightCalendarTitle: 'To',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
             weekLabel: 'W',
@@ -103,6 +106,7 @@
                         '<input class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
                         '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
                     '</div>' +
+                    '<p class="calendar-title"></p>' +
                     '<div class="calendar-table"></div>' +
                     '<div class="calendar-time">' +
                         '<div></div>' +
@@ -114,6 +118,7 @@
                         '<input class="input-mini form-control" type="text" name="daterangepicker_end" value="" />' +
                         '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
                     '</div>' +
+                    '<p class="calendar-title"></p>' +
                     '<div class="calendar-table"></div>' +
                     '<div class="calendar-time">' +
                         '<div></div>' +
@@ -145,6 +150,12 @@
 
             if (typeof options.locale.separator === 'string')
                 this.locale.separator = options.locale.separator;
+
+            if (typeof options.locale.leftCalendarTitle === 'string')
+                this.locale.daysOfWeek = options.locale.leftCalendarTitle;
+
+            if (typeof options.locale.rightCalendarTitle === 'string')
+                this.locale.daysOfWeek = options.locale.rightCalendarTitle;
 
             if (typeof options.locale.daysOfWeek === 'object')
                 this.locale.daysOfWeek = options.locale.daysOfWeek.slice();
@@ -220,6 +231,9 @@
 
         if (typeof options.drops === 'string')
             this.drops = options.drops;
+
+        if (typeof options.showCalendarTitles === 'boolean')
+            this.showCalendarTitles = options.showCalendarTitles;
 
         if (typeof options.showWeekNumbers === 'boolean')
             this.showWeekNumbers = options.showWeekNumbers;
@@ -394,6 +408,13 @@
             } else {
                 this.container.find('.ranges').hide();
             }
+        }
+
+        if (this.showCalendarTitles) {
+            this.container.find('.calendar.left .calendar-title').text(this.locale.leftCalendarTitle);
+            this.container.find('.calendar.right .calendar-title').text(this.locale.rightCalendarTitle);
+        } else {
+            this.container.find('.calendar-title').hide();
         }
 
         if ((typeof options.ranges === 'undefined' && !this.singleDatePicker) || this.alwaysShowCalendars) {
