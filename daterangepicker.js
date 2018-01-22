@@ -152,10 +152,10 @@
                 this.locale.separator = options.locale.separator;
 
             if (typeof options.locale.leftCalendarTitle === 'string')
-                this.locale.daysOfWeek = options.locale.leftCalendarTitle;
+                this.locale.leftCalendarTitle = options.locale.leftCalendarTitle;
 
             if (typeof options.locale.rightCalendarTitle === 'string')
-                this.locale.daysOfWeek = options.locale.rightCalendarTitle;
+                this.locale.rightCalendarTitle = options.locale.rightCalendarTitle;
 
             if (typeof options.locale.daysOfWeek === 'object')
                 this.locale.daysOfWeek = options.locale.daysOfWeek.slice();
