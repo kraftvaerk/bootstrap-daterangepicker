@@ -570,6 +570,7 @@
                 }
             }
 
+            this.updateMonthsInView();
             this.updateCalendars();
         },
 
