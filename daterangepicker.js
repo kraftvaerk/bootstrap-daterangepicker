@@ -277,6 +277,14 @@
         if (typeof options.timePicker24MaxHour === 'number')
             this.timePicker24MaxHour = options.timePicker24MaxHour;
 
+        // sanity check for bad options
+        if (this.timePicker24MinHour < 0)
+            this.timePicker24MinHour = 0;
+
+        // sanity check for bad options
+        if (this.timePicker24MaxHour > 23)
+            this.timePicker24MaxHour = 23;
+
         if (typeof options.autoApply === 'boolean')
             this.autoApply = options.autoApply;
 
