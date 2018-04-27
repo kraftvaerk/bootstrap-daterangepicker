@@ -1009,6 +1009,8 @@
                     disabled = true;
                 if (maxDate && time.second(0).isAfter(maxDate))
                     disabled = true;
+                if (time.hours() >= this.timePicker24MaxHour && i > 0)
+                    disabled = true;
 
                 if (selected.minute() == i && !disabled) {
                     html += '<option value="' + i + '" selected="selected">' + padded + '</option>';
@@ -1036,6 +1038,8 @@
                     if (minDate && time.isBefore(minDate))
                         disabled = true;
                     if (maxDate && time.isAfter(maxDate))
+                        disabled = true;
+                    if (time.hours() >= this.timePicker24MaxHour && i > 0)
                         disabled = true;
 
                     if (selected.second() == i && !disabled) {
