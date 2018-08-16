@@ -1,9 +1,17 @@
 /**
+* Modified Date Range Picker for Bootstrap
+*
+* Please be aware that this is modified version of the component to suit Kraftvaerk's needs.
+*
 * @version: 2.1.30
-* @author: Dan Grossman http://www.dangrossman.info/
-* @copyright: Copyright (c) 2012-2017 Dan Grossman. All rights reserved.
+* @author:
+*     Dan Grossman http://www.dangrossman.info/
+*     Kraftvaerk https://kraftvaerk.com/
+* @copyright:
+*     Copyright (c) 2012-2017 Dan Grossman. All rights reserved.
+*     Copyright (c) 2017-2018 Kraftvaerk. All rights reserved.
 * @license: Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
-* @website: http://www.daterangepicker.com/
+* @website: https://github.com/kraftvaerk/bootstrap-daterangepicker
 */
 // Follow the UMD template https://github.com/umdjs/umd/blob/master/templates/returnExportsGlobal.js
 (function (root, factory) {
