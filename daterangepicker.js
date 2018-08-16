@@ -514,6 +514,13 @@
             if (this.timePicker && this.timePickerIncrement)
                 this.startDate.minute(Math.round(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement);
 
+            if (
+                this.timePicker
+                && this.timePicker24Hour
+                && this.startDate.hour() >= this.timePicker24MaxHour
+            )
+                this.startDate.hour(this.timePicker24MaxHour).startOf('hour');
+
             if (this.minDate && this.startDate.isBefore(this.minDate)) {
                 this.startDate = this.minDate.clone();
                 if (this.timePicker && this.timePickerIncrement)
@@ -544,6 +551,13 @@
 
             if (this.timePicker && this.timePickerIncrement)
                 this.endDate.minute(Math.round(this.endDate.minute() / this.timePickerIncrement) * this.timePickerIncrement);
+
+            if (
+                this.timePicker
+                && this.timePicker24Hour
+                && this.endDate.hour() >= this.timePicker24MaxHour
+            )
+                this.endDate.hour(this.timePicker24MaxHour).startOf('hour');
 
             if (this.endDate.isBefore(this.startDate))
                 this.endDate = this.startDate.clone();
@@ -1009,7 +1023,11 @@
                     disabled = true;
                 if (maxDate && time.second(0).isAfter(maxDate))
                     disabled = true;
-                if (time.hours() >= this.timePicker24MaxHour && i > 0)
+                if (
+                    this.timePicker24Hour
+                    && i > 0
+                    && time.hours() >= this.timePicker24MaxHour
+                )
                     disabled = true;
 
                 if (selected.minute() == i && !disabled) {
@@ -1039,7 +1057,11 @@
                         disabled = true;
                     if (maxDate && time.isAfter(maxDate))
                         disabled = true;
-                    if (time.hours() >= this.timePicker24MaxHour && i > 0)
+                    if (
+                        this.timePicker24Hour
+                        && i > 0
+                        && time.hours() >= this.timePicker24MaxHour
+                    )
                         disabled = true;
 
                     if (selected.second() == i && !disabled) {
