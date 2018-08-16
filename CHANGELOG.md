@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ### Changed
 
-* Position of timepicker.
+* Change position of timepicker.
+* Allow `autoApply` option for timepicker.
 
 [Unreleased]: https://github.com/kraftvaerk/bootstrap-daterangepicker/compare/v2.1.25...HEAD
