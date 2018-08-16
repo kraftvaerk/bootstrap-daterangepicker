@@ -10,9 +10,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 * This `CHANGELOG.md` file.
 * Support for minimum and maximum hours for timepicker.
-* New `setDate()` method for single datepicker. The new method combines `setStartDate()` and `setEndDate()` methods in one call.
+* New `setDate()` method for single datepicker. The method combines `setStartDate()` and `setEndDate()` methods in one call.
 * New `setMinDate()` method.
 * Calendar titles.
+* New `clickDate.daterangepicker` event. The event is being triggered when user clicks on a date in the calendar.
 
 ### Changed
 
