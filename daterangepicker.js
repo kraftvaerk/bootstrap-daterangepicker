@@ -426,8 +426,8 @@
         }
 
         if (this.showCalendarTitles) {
-            this.container.find('.calendar.left .calendar-title').text(this.locale.leftCalendarTitle);
-            this.container.find('.calendar.right .calendar-title').text(this.locale.rightCalendarTitle);
+            this.container.find('.drp-calendar.left .calendar-title').text(this.locale.leftCalendarTitle);
+            this.container.find('.drp-calendar.right .calendar-title').text(this.locale.rightCalendarTitle);
         } else {
             this.container.find('.calendar-title').hide();
         }

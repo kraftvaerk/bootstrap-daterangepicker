@@ -254,6 +254,7 @@
 .daterangepicker .calendar-title {
   padding-top: 5px;
   margin-bottom: 5px;
+  font-size: 12px;
 }
 
 .daterangepicker .calendar-time {

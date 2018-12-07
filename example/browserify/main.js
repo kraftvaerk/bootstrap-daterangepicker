@@ -34,9 +34,6 @@ $(document).ready(function() {
     if ($('#singleDatePicker').is(':checked'))
       options.singleDatePicker = true;
 
-    if ($('#showCalendarTitles').is(':checked'))
-      options.showCalendarTitles = true;
-
     if ($('#showDropdowns').is(':checked'))
       options.showDropdowns = true;
 
@@ -51,12 +48,6 @@ $(document).ready(function() {
 
     if ($('#timePicker24Hour').is(':checked'))
       options.timePicker24Hour = true;
-
-    if ($('#timePicker24MinHour').val().length)
-      options.timePicker24MinHour = parseInt($('#timePicker24MinHour').val(), 10);
-
-    if ($('#timePicker24MaxHour').val().length)
-      options.timePicker24MaxHour = parseInt($('#timePicker24MaxHour').val(), 10);
 
     if ($('#timePickerIncrement').val().length && $('#timePickerIncrement').val() != 1)
       options.timePickerIncrement = parseInt($('#timePickerIncrement').val(), 10);
@@ -85,8 +76,6 @@ $(document).ready(function() {
       options.locale = {
         format: 'MM/DD/YYYY HH:mm',
         separator: ' - ',
-        leftCalendarTitle: 'From',
-        rightCalendarTitle: 'To',
         applyLabel: 'Apply',
         cancelLabel: 'Cancel',
         fromLabel: 'From',
