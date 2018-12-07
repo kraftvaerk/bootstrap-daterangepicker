@@ -36,6 +36,9 @@ $(document).ready(function() {
   function updateConfig() {
     var options = {};
 
+    if (!$('#datePicker').is(':checked'))
+      options.datePicker = false;
+
     if ($('#singleDatePicker').is(':checked'))
       options.singleDatePicker = true;
 

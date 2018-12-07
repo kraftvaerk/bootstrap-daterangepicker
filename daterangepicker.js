@@ -48,6 +48,7 @@
         this.maxDate = false;
         this.maxSpan = false;
         this.autoApply = false;
+        this.datePicker = true;
         this.singleDatePicker = false;
         this.showCalendarTitles = false;
         this.showDropdowns = false;
@@ -266,6 +267,9 @@
         if (typeof options.showCustomRangeLabel === 'boolean')
             this.showCustomRangeLabel = options.showCustomRangeLabel;
 
+        if (typeof options.datePicker === 'boolean')
+            this.datePicker = options.datePicker;
+
         if (typeof options.singleDatePicker === 'boolean') {
             this.singleDatePicker = options.singleDatePicker;
             if (this.singleDatePicker)
@@ -414,6 +418,10 @@
 
         if (typeof options.ranges === 'object')
             this.container.addClass('show-ranges');
+
+        if (!this.datePicker) {
+            this.container.find('.calendar-table').hide();
+        }
 
         if (this.singleDatePicker) {
             this.container.addClass('single');
